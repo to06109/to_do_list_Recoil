@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { categoryState, toDoState } from '../atoms'
 
 // 사용자 입력값 toDo 설명
@@ -8,8 +8,9 @@ interface IForm {
 }
 
 function CreateToDo() {
+  const [ToDos, setToDos] = useRecoilState(toDoState)
   // atom 수정만 하면됨
-  const setToDos = useSetRecoilState(toDoState)
+  // const setToDos = useSetRecoilState(toDoState)
   // 현재 카테고리 받아옴
   const category = useRecoilValue(categoryState)
   const { register, handleSubmit, setValue } = useForm<IForm>()
@@ -17,11 +18,12 @@ function CreateToDo() {
   const handleValid = ({ toDo }: IForm) => {
     // ...oldToDos: oldToDos배열 안의 요소를 반환
     setToDos((oldToDos) => [
-      { text: toDo, id: Date.now(), category: category },
+      { text: toDo, id: Date.now(), category },
       ...oldToDos,
     ])
     setValue('toDo', '') // submit 완료하면 input 비우기
   }
+  localStorage.setItem('todo', JSON.stringify(ToDos))
   return (
     <form onSubmit={handleSubmit(handleValid)}>
       <input
