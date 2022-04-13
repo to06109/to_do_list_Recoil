@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/to_do_list_Recoil/static/js/main.ea791529.chunk.js",
+    "main.js.map": "/to_do_list_Recoil/static/js/main.ea791529.chunk.js.map",
+    "runtime-main.js": "/to_do_list_Recoil/static/js/runtime-main.ffb22645.js",
+    "runtime-main.js.map": "/to_do_list_Recoil/static/js/runtime-main.ffb22645.js.map",
+    "static/js/2.24facaca.chunk.js": "/to_do_list_Recoil/static/js/2.24facaca.chunk.js",
+    "static/js/2.24facaca.chunk.js.map": "/to_do_list_Recoil/static/js/2.24facaca.chunk.js.map",
+    "index.html": "/to_do_list_Recoil/index.html",
+    "static/js/2.24facaca.chunk.js.LICENSE.txt": "/to_do_list_Recoil/static/js/2.24facaca.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ffb22645.js",
+    "static/js/2.24facaca.chunk.js",
+    "static/js/main.ea791529.chunk.js"
+  ]
+}
