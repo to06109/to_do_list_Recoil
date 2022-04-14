@@ -1,8 +1,9 @@
-import { useRecoilState, useSetRecoilState } from 'recoil'
-import { Categories, IToDo, toDoState } from '../atoms'
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import { categoryState, IToDo, selecCateState, toDoState } from '../atoms'
 
 function ToDo({ text, id, category }: IToDo) {
   const [ToDos, setToDos] = useRecoilState(toDoState)
+  const cate = useRecoilValue(categoryState)
   // toDos의 카테고리를 바꾸는 함수
   // const setToDos = useSetRecoilState(toDoState)
   // newCategory 타입 설명
@@ -24,18 +25,12 @@ function ToDo({ text, id, category }: IToDo) {
   return (
     <li>
       <span>{text}</span>
-      {/* 카테고리가 DOING이 아닐 때만 Doing버튼 보여주기 */}
-      {category !== Categories.DOING && (
-        // 인자가 있는 onClick 처리하기
-        // 무슨 버튼이 눌렸는지 onClick함수에 인자로 넘겨줌
-        <button onClick={() => onClick(Categories.DOING)}>Doing</button>
-      )}
-      {category !== Categories.TO_DO && (
-        <button onClick={() => onClick(Categories.TO_DO)}>To Do</button>
-      )}
-      {category !== Categories.DONE && (
-        <button onClick={() => onClick(Categories.DONE)}>Done</button>
-      )}
+      {/* 선택된 카테고리 빼고 버튼 보여주기  */}
+      {cate.map((cate) => {
+        if(cate !== category){
+          return <button onClick={() => onClick(cate)}>{cate}</button>
+        }
+      })}
     </li>
   )
 }

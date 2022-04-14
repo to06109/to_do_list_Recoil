@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { categoryState, toDoState } from '../atoms'
+import { selecCateState, toDoState } from '../atoms'
 
 // 사용자 입력값 toDo 설명
 interface IForm {
@@ -9,10 +9,8 @@ interface IForm {
 
 function CreateToDo() {
   const [ToDos, setToDos] = useRecoilState(toDoState)
-  // atom 수정만 하면됨
-  // const setToDos = useSetRecoilState(toDoState)
   // 현재 카테고리 받아옴
-  const category = useRecoilValue(categoryState)
+  const category = useRecoilValue(selecCateState)
   const { register, handleSubmit, setValue } = useForm<IForm>()
   // form의 데이터가 유효할 때 handleSubmit이 호출할 함수
   const handleValid = ({ toDo }: IForm) => {
