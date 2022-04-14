@@ -1,5 +1,18 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { categoryState, IToDo, selecCateState, toDoState } from '../atoms'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import styled from 'styled-components'
+import { categoryState, IToDo, toDoState } from '../atoms'
+
+const TodoDiv = styled.div`
+  margin-top: 10px;
+  display: flex;
+`
+
+const Button = styled.button`
+border-radius: 10px;
+  background-color: aliceblue;
+  margin-left: 5px;
+`
+
 
 function ToDo({ text, id, category }: IToDo) {
   const setToDos = useSetRecoilState(toDoState)
@@ -31,15 +44,17 @@ function ToDo({ text, id, category }: IToDo) {
     })
   }
   return (
+    <TodoDiv>
     <li>
       <span>{text}</span>
       {/* 선택된 카테고리 빼고 버튼 보여주기  */}
       {cate.map((cate) => {
         if(cate !== category){
-          return <button onClick={() => onClick(cate)}>{cate}</button>
+          return <Button onClick={() => onClick(cate)}>{cate}</Button>
         }
       })}
     </li>
+    </TodoDiv>
   )
 }
 
