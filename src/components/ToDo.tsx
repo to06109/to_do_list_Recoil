@@ -2,7 +2,7 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { categoryState, IToDo, selecCateState, toDoState } from '../atoms'
 
 function ToDo({ text, id, category }: IToDo) {
-  const [ToDos, setToDos] = useRecoilState(toDoState)
+  const setToDos = useSetRecoilState(toDoState)
   const cate = useRecoilValue(categoryState)
   // toDos의 카테고리를 바꾸는 함수
   // const setToDos = useSetRecoilState(toDoState)
@@ -14,14 +14,22 @@ function ToDo({ text, id, category }: IToDo) {
       const targetIndex = oldToDos.findIndex((toDo) => toDo.id === id)
       // category를 클릭한 버튼으로 바꿔줌
       const newToDo = { text, id, category: newCategory }
-      return [
-        ...oldToDos.slice(0, targetIndex),
-        newToDo,
-        ...oldToDos.slice(targetIndex + 1),
-      ]
+
+      if (newCategory === "delete"){ // 삭제버튼 클릭하면 todo 삭제하기
+        return [
+          ...oldToDos.slice(0, targetIndex),
+          ...oldToDos.slice(targetIndex + 1),
+        ] 
+      }
+      else {
+        return [
+          ...oldToDos.slice(0, targetIndex),
+          newToDo,
+          ...oldToDos.slice(targetIndex + 1),
+        ]
+      }
     })
   }
-  localStorage.setItem('todo', JSON.stringify(ToDos))
   return (
     <li>
       <span>{text}</span>

@@ -8,7 +8,7 @@ interface IForm {
 }
 
 function CreateToDo() {
-  const [ToDos, setToDos] = useRecoilState(toDoState)
+  const setToDos = useSetRecoilState(toDoState)
   // 현재 카테고리 받아옴
   const category = useRecoilValue(selecCateState)
   const { register, handleSubmit, setValue } = useForm<IForm>()
@@ -21,7 +21,6 @@ function CreateToDo() {
     ])
     setValue('toDo', '') // submit 완료하면 input 비우기
   }
-  localStorage.setItem('todo', JSON.stringify(ToDos))
   return (
     <form onSubmit={handleSubmit(handleValid)}>
       <input

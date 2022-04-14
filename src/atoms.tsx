@@ -16,13 +16,13 @@ export const selecCateState = atom({
 // category 배열
 export const categoryState = atom({
   key: 'catagory',
-  default: ['TO_DO', 'DOING', 'DONE'],
+  default: ['TO_DO', 'DOING', 'DONE', "DELETE"],
 })
 
 // ToDo 배열
 export const toDoState = atom<IToDo[]>({
   key: 'toDos',
-  default: [],
+  default: JSON.parse(localStorage.getItem("todo") || "[]"),
 })
 
 // selector
