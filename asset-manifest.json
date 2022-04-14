@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/to_do_list_Recoil/static/js/main.ee0c3ef8.chunk.js",
-    "main.js.map": "/to_do_list_Recoil/static/js/main.ee0c3ef8.chunk.js.map",
+    "main.js": "/to_do_list_Recoil/static/js/main.3ab655de.chunk.js",
+    "main.js.map": "/to_do_list_Recoil/static/js/main.3ab655de.chunk.js.map",
     "runtime-main.js": "/to_do_list_Recoil/static/js/runtime-main.ffb22645.js",
     "runtime-main.js.map": "/to_do_list_Recoil/static/js/runtime-main.ffb22645.js.map",
-    "static/js/2.dc35b9e7.chunk.js": "/to_do_list_Recoil/static/js/2.dc35b9e7.chunk.js",
-    "static/js/2.dc35b9e7.chunk.js.map": "/to_do_list_Recoil/static/js/2.dc35b9e7.chunk.js.map",
+    "static/js/2.a3fc3e6a.chunk.js": "/to_do_list_Recoil/static/js/2.a3fc3e6a.chunk.js",
+    "static/js/2.a3fc3e6a.chunk.js.map": "/to_do_list_Recoil/static/js/2.a3fc3e6a.chunk.js.map",
     "index.html": "/to_do_list_Recoil/index.html",
-    "static/js/2.dc35b9e7.chunk.js.LICENSE.txt": "/to_do_list_Recoil/static/js/2.dc35b9e7.chunk.js.LICENSE.txt"
+    "static/js/2.a3fc3e6a.chunk.js.LICENSE.txt": "/to_do_list_Recoil/static/js/2.a3fc3e6a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ffb22645.js",
-    "static/js/2.dc35b9e7.chunk.js",
-    "static/js/main.ee0c3ef8.chunk.js"
+    "static/js/2.a3fc3e6a.chunk.js",
+    "static/js/main.3ab655de.chunk.js"
   ]
 }
